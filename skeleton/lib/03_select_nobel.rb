@@ -40,7 +40,7 @@ def literature_1962
   FROM nobels
   WHERE yr = 1962 AND subject = 'Literature';
   SQL
-end nobels
+end 
 
 def einstein_prize
   # Show the year and subject that won 'Albert Einstein' his prize.
@@ -67,7 +67,7 @@ def eighties_literature
   execute(<<-SQL)
   SELECT *
   FROM nobels
-  WHERE yr BETWEEN 1980 AND 1989;
+  WHERE yr BETWEEN 1980 AND 1989 AND subject = 'Literature';
   SQL
 end
 
@@ -84,6 +84,8 @@ end
 def nobel_johns
   # Show the winners with first name John
   execute(<<-SQL)
-  
+  SELECT winner
+  FROM nobels
+  WHERE winner LIKE 'John%';
   SQL
 end
